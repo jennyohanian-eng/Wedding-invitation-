@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Wedding - Save The Date</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;background:#FDF9F3;color:#333}
+h1,h2{font-family:'Cormorant Garamond',serif}
+.hero{background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1200');background-size:cover;background-position:center;color:white;text-align:center;padding:70px 20px 50px}
+.hero small{letter-spacing:4px;font-size:12px}
+.hero h1{font-size:56px;line-height:1;margin:15px 0;font-weight:600}
+.hero p{font-size:15px;opacity:.9}
+.countdown{display:flex;justify-content:center;gap:12px;margin-top:25px}
+.countdown div{background:rgba(255,255,255,.15);backdrop-filter:blur(5px);border:1px solid rgba(255,255,255,.3);border-radius:12px;padding:12px 14px;min-width:68px}
+.countdown b{font-size:24px;display:block}
+.countdown span{font-size:11px;letter-spacing:1px}
+.container{max-width:750px;margin:-20px auto 0;background:white;border-radius:22px 22px 0 0;padding:30px 20px 40px;position:relative;box-shadow:0 -10px 40px rgba(0,0,0,.1)}
+.section{margin-bottom:32px;text-align:center}
+.section h2{font-size:32px;color:#8A6D1B;margin-bottom:8px}
+.section p{color:#777;font-size:14px;line-height:1.6}
+.timeline{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+.card{display:flex;gap:14px;align-items:center;background:#FFFBF2;border:1px solid #F0E6D2;border-radius:16px;padding:14px;text-align:left}
+.card .time{background:#111;color:#D4AF37;font-weight:700;border-radius:12px;padding:12px 10px;min-width:72px;text-align:center;font-size:14px}
+.card h3{font-size:19px;margin-bottom:2px}
+.card p{font-size:13px;margin-bottom:8px}
+.btn-map{display:inline-block;background:#111;color:#fff;text-decoration:none;padding:8px 14px;border-radius:20px;font-size:12px;font-weight:600}
+.btn-map.gold{background:#C9A227;color:#111}
+.gift{background:#111;color:white;border-radius:18px;padding:22px}
+.gift h2{color:#FFD700}
+.gift p{color:#ddd}
+.gift .wish{font-size:26px;letter-spacing:2px;font-weight:700;color:#FFD700;margin:12px 0}
+.gift button{background:#FFD700;border:none;padding:10px 18px;border-radius:20px;font-weight:700;cursor:pointer}
+.rsvp{background:#FFF9E6;border:2px dashed #E8D9A8;border-radius:20px;padding:22px 18px}
+.rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:14px;border-radius:12px;border:1px solid #EDEDED;margin-bottom:10px;font-size:15px;font-family:inherit}
+.rsvp-row{display:flex;gap:10px}
+.rsvp-row>*{flex:1}
+.btn-yes,.btn-no{flex:1;padding:16px;border:none;border-radius:14px;font-size:17px;font-weight:800;cursor:pointer}
+.btn-yes{background:#0E7A3D;color:white}
+.btn-no{background:#eee;color:#333}
+.footer{text-align:center;color:#999;font-size:12px;padding:20px}
+@media(max-width:600px){.hero h1{font-size:40px}.rsvp-row{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <small>✨ WE ARE GETTING MARRIED ✨</small>
+  <h1>Groom Name<br>&amp; Bride Name</h1>
+  <p>Zgharta • Lebanon • Save The Date</p>
+  <div class="countdown">
+    <div><b id="d">00</b><span>DAYS</span></div>
+    <div><b id="h">00</b><span>HOURS</span></div>
+    <div><b id="m">00</b><span>MINUTES</span></div>
+    <div><b id="s">00</b><span>SECONDS</span></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <h2>Our Day</h2>
+    <p>Click on Location to open Google Maps &amp; navigate directly</p>
+    <div class="timeline">
+
+      <div class="card">
+        <div class="time">3:00 PM<br>BRIDE'S HOME</div>
+        <div>
+          <h3>🏠 Bride's House - Zgharta</h3>
+          <p>We start the day at the bride's home in Zgharta</p>
+          <a class="btn-map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Zgharta+Lebanon">📍 Open in Google Maps</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="time">6:00 PM<br>CHURCH</div>
+        <div>
+          <h3>⛪ Church Mar Sarkis w Bekhos - Zgharta</h3>
+          <p>Holy Ceremony - Mar Sarkis &amp; Bekhos Church</p>
+          <a class="btn-map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Mar+Sarkis+Bekhos+Church+Zgharta">📍 Open in Google Maps</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="time">8:00 PM<br>WELCOME DRINK</div>
+        <div>
+          <h3>🥂 Octagon Venue</h3>
+          <p>Welcome Drink &amp; Party at Octagon</p>
+          <a class="btn-map gold" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Octagon+Venue+Lebanon">📍 Open in Google Maps</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="time">GROOM<br>HOUSE</div>
+        <div>
+          <h3>🏠 Groom's House - Miziria</h3>
+          <p>Groom's family home in Miziria</p>
+          <a class="btn-map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Miziria+Lebanon">📍 Open in Google Maps</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section gift">
+    <h2>Gift</h2>
+    <p>Your presence is the greatest gift of all.<br>However, if you wish to honour us with a gift,<br>a monetary contribution would be sincerely appreciated.</p>
+    <div class="wish">Wish Money: 76 557 624</div>
+    <button onclick="copyWish()">Copy Number 📋</button>
+    <p id="copyMsg" style="font-size:12px;margin-top:8px"></p>
+  </div>
+
+  <div class="section">
+    <h2>Will You Be There?</h2>
+    <p>Please confirm before <b>[PUT DEADLINE DATE HERE]</b></p>
+  </div>
+
+  <div class="rsvp">
+    <input id="name" placeholder="Your Full Name *">
+    <div class="rsvp-row">
+      <input id="phone" placeholder="Your Phone Number *" type="tel">
+      <select id="guests">
+        <option value="1 Person">1 Person</option>
+        <option value="2 Persons">2 Persons</option>
+        <option value="3 Persons">3 Persons</option>
+        <option value="4 Persons">4 Persons</option>
+        <option value="5+ Persons">5+ Persons</option>
+      </select>
+    </div>
+    <textarea id="note" placeholder="Message for the couple (optional)"></textarea>
+
+    <div style="display:flex;gap:10px">
+      <button class="btn-yes" id="yesBtn" onclick="sendRSVP('YES - I WILL ATTEND')">✅ ACCEPT</button>
+      <button class="btn-no" id="noBtn" onclick="sendRSVP('NO - I CANNOT ATTEND')">❌ DECLINE</button>
+    </div>
+    <p id="rsvpMsg" style="text-align:center;margin-top:12px;font-size:14px;color:#666"></p>
+  </div>
+
+</div>
+<div class="footer">With Love • Groom &amp; Bride • See you there ❤️</div>
+
+<script>
+const MY_EMAIL = "jennyohanian@gmail.com";
+const WISH_MONEY = "76557624";
+
+const weddingDate = new Date("2027-06-15T18:00:00").getTime();
+setInterval(()=>{
+  let diff = weddingDate - Date.now();
+  if(diff<0) diff=0;
+  document.getElementById('d').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
+  document.getElementById('h').textContent = String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
+  document.getElementById('m').textContent = String(Math.floor(diff%3600000/60000)).padStart(2,'0');
+  document.getElementById('s').textContent = String(Math.floor(diff%60000/1000)).padStart(2,'0');
+},1000);
+
+function copyWish(){
+  navigator.clipboard.writeText(WISH_MONEY);
+  document.getElementById('copyMsg').textContent = "Copied! Thank you ❤️";
+}
+
+async function sendRSVP(status){
+  let name = document.getElementById('name').value.trim();
+  let phone = document.getElementById('phone').value.trim();
+  let guests = document.getElementById('guests').value;
+  let note = document.getElementById('note').value.trim();
+  let msg = document.getElementById('rsvpMsg');
+  if(!name || !phone){ msg.textContent="⚠️ Please enter your Name & Phone first!"; msg.style.color="red"; return; }
+
+  msg.textContent = "Sending... Please wait...";
+  msg.style.color = "#666";
+  document.getElementById('yesBtn').disabled = true;
+  document.getElementById('noBtn').disabled = true;
+
+  // Send directly to your email - no email app, no WhatsApp, invisible to guest
+  try{
+    await fetch(`https://formsubmit.co/ajax/${MY_EMAIL}`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json", "Accept": "application/json"},
+      body: JSON.stringify({
+        _subject: `💍 NEW RSVP: ${status} - ${name}`,
+        _template: "table",
+        _captcha: "false",
+        Status: status,
+        Name: name,
+        Phone: phone,
+        Guests: guests,
+        Message: note || "-",
+        Date: new Date().toLocaleString()
+      })
+    });
+    msg.innerHTML = "Thank you ❤️ Your reply has been received!";
+    msg.style.color = "#0E7A3D";
+    document.getElementById('name').value = "";
+    document.getElementById('phone').value = "";
+    document.getElementById('note').value = "";
+  }catch(e){
+    msg.textContent = "Something went wrong, please try again.";
+    msg.style.color = "red";
+  }
+  document.getElementById('yesBtn').disabled = false;
+  document.getElementById('noBtn').disabled = false;
+}
+</script>
+</body>
+</html>
