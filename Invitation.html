@@ -15,8 +15,6 @@ body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-a
 #envelopeOverlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .env-video-wrap{width:100%;max-width:480px;aspect-ratio:9/15;position:relative;overflow:hidden;background:#000;cursor:pointer}
 #envVideo{width:100%;height:100%;object-fit:cover;display:block}
-.env-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;transition:opacity .3s;cursor:pointer}
-.env-poster.hide{opacity:0;pointer-events:none}
 .open-btn{margin-top:18px;background:#4A0E1A;color:white;border:none;padding:16px 36px;border-radius:30px;font-size:14px;letter-spacing:2px;cursor:pointer;box-shadow:0 12px 28px rgba(74,14,26,.45);animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 .tap-hint{margin-top:10px;font-size:12px;color:#fff;opacity:.8}
@@ -71,8 +69,7 @@ body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-a
 <body>
 <div id="envelopeOverlay">
   <div class="env-video-wrap" onclick="playEnvelope()">
-    <img class="env-poster" id="envPoster" src="Envelope.jpg.jpg">
-    <video id="envVideo" playsinline preload="auto" muted>
+    <video id="envVideo" autoplay muted loop playsinline preload="auto">
       <source src="Envelope.mov" type="video/quicktime">
       <source src="Envelope.mov" type="video/mp4">
     </video>
@@ -109,11 +106,10 @@ let closed = false;
 function playEnvelope(){
   if(played) return; played = true;
   let v = document.getElementById('envVideo');
-  let p = document.getElementById('envPoster');
-  p.classList.add('hide');
+  v.loop = false;
+  v.currentTime = 0;
   v.muted = true;
   v.play().catch(()=>{});
-  // *** HONE L MOUHEM: NWE2AF 3A 2.5 SEC 2ABEL MA TETLA3 SURTON ***
   v.addEventListener('timeupdate', ()=>{
     if(v.currentTime >= 2.5 && !closed){
       v.pause();
