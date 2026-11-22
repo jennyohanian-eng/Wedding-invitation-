@@ -69,7 +69,7 @@ body{font-family:'Montserrat',sans-serif;background:#000;color:#3a2a2a;text-alig
 <body>
 <div id="envelopeOverlay">
   <div class="env-video-wrap" onclick="playEnvelope()">
-    <video id="envVideo" playsinline preload="auto" muted>
+    <video id="envVideo" playsinline preload="auto" muted autoplay>
       <source src="Envelope.mp4" type="video/mp4">
       <source src="Envelope.mov" type="video/quicktime">
     </video>
@@ -103,20 +103,26 @@ const WISH = "76557624";
 let selected = "YES - I WILL ATTEND";
 let played = false;
 let closed = false;
+let pausedOnEnvelope = false;
+let v = document.getElementById('envVideo');
+
+// 1- L video byeballesh la wa7do bas la yousal la l zarf, ba3den byew2af
+v.addEventListener('timeupdate', function(){
+  if(!played && !pausedOnEnvelope && v.currentTime >= 0.5){
+    v.pause();
+    pausedOnEnvelope = true;
+  }
+});
 
 function playEnvelope(){
-  if(played) return;
-  played = true;
-  let v = document.getElementById('envVideo');
+  if(played) return; played = true;
   v.currentTime = 0;
   v.play();
-  // Ba3ed 2 sec - ba3ed l dakhne - yeftah l invitation, 2abel sura l couple
+  // Ba3ed l dakhne - 2 sec - yeftah l invitation, 2abel sura l couple
   setTimeout(function(){ closeEnvelope(); }, 2000);
 }
-
 function closeEnvelope(){
-  if(closed) return;
-  closed = true;
+  if(closed) return; closed = true;
   document.getElementById('envelopeOverlay').classList.add('hidden');
   document.body.style.overflow='auto';
   observeReveals();
