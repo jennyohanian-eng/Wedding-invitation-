@@ -11,33 +11,15 @@ html{scroll-behavior:smooth}
 body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-align:center;overflow-x:hidden}
 .script{font-family:'Great Vibes',cursive}
 .phone{max-width:480px;margin:0 auto;background:#FDF6EC;overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,.2)}
-
-/* ============ ENVELOPE HA2I2E BYINFATEH ============ */
-#envelopeOverlay{position:fixed;inset:0;background:#EAD9C2;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;transition:opacity .9s, visibility .9s}
+#envelopeOverlay{position:fixed;inset:0;background:#000;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;transition:opacity .8s, visibility .8s}
 #envelopeOverlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.env-scene{width:340px;height:500px;max-width:88vw;max-height:62vh;position:relative;cursor:pointer;perspective:1200px}
-.env-3d{position:absolute;inset:0;transform-style:preserve-3d}
-/* L carta l juwwa - l invitation */
-.env-inner{position:absolute;inset:10px 14px;background:linear-gradient(180deg,#FFFDF8,#FDF6EC);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;box-shadow:0 5px 20px rgba(0,0,0,.15);transition:transform 1.2s ease .3s}
-.env-inner .mono{width:46px;height:46px;border:1px solid #C9A98A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:13px;color:#8A6D1B;margin-bottom:12px}
-.env-inner h3{font-size:50px;line-height:.85}
-.env-inner .date{font-family:'Cormorant Garamond',serif;font-size:15px;margin-top:14px;color:#7a6a5a}
-.env-inner .sub{font-size:11px;font-style:italic;color:#999;margin-top:6px}
-/* Wesh l zarf l tahtene - men nafs l sura */
-.env-front{position:absolute;inset:0;z-index:3;background-image:url('Envelope.jpg.jpg');background-size:cover;background-position:center;border-radius:8px;box-shadow:0 30px 60px rgba(0,0,0,.35);clip-path:polygon(0 0,100% 0,100% 100%,0 100%);transition:opacity .4s .5s}
-/* L ghta l fo2ane - men nafs l sura, byinfeteh */
-.env-flap{position:absolute;top:0;left:0;right:0;height:52%;z-index:4;background-image:url('Envelope.jpg.jpg');background-size:340px 500px;background-position:top center;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transform:rotateX(0deg);transition:transform 1s ease .1s;backface-visibility:hidden;filter:brightness(1.02)}
-/* L shrit w l khetm - byekhtefo */
-.env-seal{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;z-index:5;background-image:url('Envelope.jpg.jpg');background-size:340px 500px;background-position:center;border-radius:50%;box-shadow:0 8px 20px rgba(0,0,0,.35);transition:all .5s}
-/* ANIMATION L FATEH */
-.env-scene.open .env-flap{transform:rotateX(180deg);z-index:1}
-.env-scene.open .env-seal{transform:translate(-50%,-50%) scale(0) rotate(90deg);opacity:0}
-.env-scene.open .env-front{opacity:0;pointer-events:none}
-.env-scene.open .env-inner{transform:translateY(-55px) scale(1.04);z-index:6}
-.open-btn{margin-top:26px;background:#4A0E1A;color:white;border:none;padding:16px 36px;border-radius:30px;font-size:14px;letter-spacing:2px;cursor:pointer;box-shadow:0 12px 28px rgba(74,14,26,.45);animation:pulse 1.6s infinite;position:relative;z-index:10}
+.env-video-wrap{width:100%;max-width:480px;aspect-ratio:9/15;position:relative;overflow:hidden;background:#000;cursor:pointer}
+#envVideo{width:100%;height:100%;object-fit:cover;display:block}
+.env-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;transition:opacity .3s;cursor:pointer}
+.env-poster.hide{opacity:0;pointer-events:none}
+.open-btn{margin-top:18px;background:#4A0E1A;color:white;border:none;padding:16px 36px;border-radius:30px;font-size:14px;letter-spacing:2px;cursor:pointer;box-shadow:0 12px 28px rgba(74,14,26,.45);animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-.tap-hint{margin-top:12px;font-size:12px;color:#7a6a5a}
-
+.tap-hint{margin-top:10px;font-size:12px;color:#fff;opacity:.8}
 .reveal{opacity:0;transform:translateY(35px);transition:opacity .9s, transform .9s}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-left{opacity:0;transform:translateX(-35px);transition:all .9s}
@@ -56,8 +38,6 @@ body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-a
 .count{display:flex;justify-content:center;gap:10px;margin-top:18px}
 .count div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:14px 0;width:74px}
 .count b{font-size:26px;display:block}
-.count b.tick{animation:tick .5s}
-@keyframes tick{0%{transform:scale(1.3);opacity:.5}100%{transform:scale(1);opacity:1}}
 .count span{font-size:10px;letter-spacing:1px;opacity:.8}
 .section{padding:35px 22px}
 .section h2{font-family:'Cormorant Garamond',serif;font-size:38px}
@@ -90,17 +70,17 @@ body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-a
 </head>
 <body>
 <div id="envelopeOverlay">
-  <div class="env-scene" id="envScene" onclick="openEnvelope()">
-    <div class="env-3d">
-      <div class="env-inner"><div class="mono">A & M</div><h3 class="script">Groom &<br>Bride</h3><div class="date">Sunday, June 15, 2027</div><div class="sub">The Next Chapter of Our Forever</div></div>
-      <div class="env-front"></div>
-      <div class="env-flap"></div>
-      <div class="env-seal"></div>
-    </div>
+  <div class="env-video-wrap" onclick="playEnvelope()">
+    <img class="env-poster" id="envPoster" src="Envelope.jpg.jpg">
+    <video id="envVideo" playsinline preload="auto" muted>
+      <source src="Envelope.mov" type="video/quicktime">
+      <source src="Envelope.mov" type="video/mp4">
+    </video>
   </div>
-  <button class="open-btn" onclick="openEnvelope()">✉️ OPEN INVITATION</button>
-  <p class="tap-hint">Tap the envelope to open • اضغطي لفتح الدعوة</p>
+  <button class="open-btn" onclick="playEnvelope()">✉️ OPEN INVITATION</button>
+  <p class="tap-hint">Tap to open • اضغطي لفتح الدعوة</p>
 </div>
+
 <div class="phone">
 <div class="hero"><small>✨ WE ARE GETTING MARRIED ✨</small><h1 class="script">Groom Name<br>& Bride Name</h1><div class="date">Sunday, June 15, 2027</div><div class="sub">The Next Chapter of Our Forever</div><div class="pill">DISCOVER OUR DAY ↓</div></div>
 <div class="lace"></div>
@@ -119,15 +99,35 @@ body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-a
 <div class="rsvp reveal"><h2>RSVP</h2><p>Will you join us?<br>Please reply before July 1, 2027</p><label>Your Name *</label><input id="name" placeholder="Enter your name"><div class="rsvp-row"><div><label>Phone *</label><input id="phone" placeholder="Phone number" type="tel"></div><div><label>Guests</label><select id="guests"><option>1 Person</option><option>2 Persons</option><option>3 Persons</option><option>4 Persons</option><option>5+ Persons</option></select></div></div><label>Are you attending?</label><div class="choice"><button id="btnYes" onclick="choose('YES - I WILL ATTEND',this)">Joyfully Accept</button><button id="btnNo" onclick="choose('NO - I CANNOT ATTEND',this)">Regretfully Decline</button></div><label>Any special requests or notes</label><textarea id="note" rows="2" placeholder="Message for the couple..."></textarea><button class="send" onclick="sendRSVP()">SEND RSVP</button><p id="rsvpMsg"></p></div>
 <div class="thank reveal"><h2>Thank You</h2><p>We are so grateful to celebrate<br>this special day surrounded<br>by the people we love most.</p><h1 class="script" style="font-size:42px;margin-top:14px">Groom & Bride</h1><p style="font-size:11px;letter-spacing:3px;margin-top:20px">WITH LOVE • SEE YOU THERE ❤️</p></div>
 </div>
+
 <script>
 const FORM_ID = "e703be2ca592c720f6ea10de4db9096f";
 const WISH = "76557624";
 let selected = "YES - I WILL ATTEND";
-let opened = false;
-function openEnvelope(){
-  if(opened) return; opened = true;
-  document.getElementById('envScene').classList.add('open');
-  setTimeout(()=>{ document.getElementById('envelopeOverlay').classList.add('hidden'); document.body.style.overflow='auto'; observeReveals(); }, 1900);
+let played = false;
+let closed = false;
+function playEnvelope(){
+  if(played) return; played = true;
+  let v = document.getElementById('envVideo');
+  let p = document.getElementById('envPoster');
+  p.classList.add('hide');
+  v.muted = true;
+  v.play().catch(()=>{});
+  // *** HONE L MOUHEM: NWE2AF 3A 2.5 SEC 2ABEL MA TETLA3 SURTON ***
+  v.addEventListener('timeupdate', ()=>{
+    if(v.currentTime >= 2.5 && !closed){
+      v.pause();
+      closeEnvelope();
+    }
+  });
+  v.onended = ()=>{ closeEnvelope(); };
+  setTimeout(()=>{ closeEnvelope(); }, 3000);
+}
+function closeEnvelope(){
+  if(closed) return; closed = true;
+  document.getElementById('envelopeOverlay').classList.add('hidden');
+  document.body.style.overflow='auto';
+  observeReveals();
 }
 document.body.style.overflow='hidden';
 function observeReveals(){
@@ -136,7 +136,7 @@ function observeReveals(){
 }
 const weddingDate = new Date("2027-06-15T18:00:00").getTime();
 let last={};
-function setVal(id,val){ const el=document.getElementById(id); const v=String(val).padStart(2,'0'); if(last[id]!==v){ el.textContent=v; el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick'); last[id]=v; } }
+function setVal(id,val){ const el=document.getElementById(id); const v=String(val).padStart(2,'0'); if(last[id]!==v){ el.textContent=v; last[id]=v; } }
 setInterval(()=>{ let diff=weddingDate-Date.now(); if(diff<0) diff=0; setVal('d',Math.floor(diff/86400000)); setVal('h',Math.floor(diff%86400000/3600000)); setVal('m',Math.floor(diff%3600000/60000)); setVal('s',Math.floor(diff%60000/1000)); },1000);
 function copyWish(){ navigator.clipboard.writeText(WISH); document.getElementById('copyMsg').textContent="Copied! Thank you ❤️"; }
 function choose(val,btn){ selected=val; document.querySelectorAll('.choice button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
