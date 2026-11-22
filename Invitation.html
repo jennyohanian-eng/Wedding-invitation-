@@ -11,7 +11,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-align:center;overflow-x:hidden}
 .script{font-family:'Great Vibes',cursive}
 .phone{max-width:480px;margin:0 auto;background:#FDF6EC;overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,.2)}
-#envelopeOverlay{position:fixed;inset:0;background:#000;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;transition:opacity .8s, visibility .8s}
+#envelopeOverlay{position:fixed;inset:0;background:#000;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;transition:opacity .6s, visibility .6s}
 #envelopeOverlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .env-video-wrap{width:100%;max-width:480px;aspect-ratio:9/15;position:relative;overflow:hidden;background:#000;cursor:pointer}
 #envVideo{width:100%;height:100%;object-fit:cover;display:block}
@@ -69,7 +69,7 @@ body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-a
 <body>
 <div id="envelopeOverlay">
   <div class="env-video-wrap" onclick="playEnvelope()">
-    <video id="envVideo" autoplay muted loop playsinline preload="auto">
+    <video id="envVideo" playsinline preload="auto" muted poster="Envelope.jpg.jpg">
       <source src="Envelope.mov" type="video/quicktime">
       <source src="Envelope.mov" type="video/mp4">
     </video>
@@ -106,18 +106,18 @@ let closed = false;
 function playEnvelope(){
   if(played) return; played = true;
   let v = document.getElementById('envVideo');
-  v.loop = false;
   v.currentTime = 0;
   v.muted = true;
   v.play().catch(()=>{});
+  // *** BA3ED L DAKHNE DEGHRE - 2.0 SEC - YSakker 2ABEL SURA L COUPLE ***
   v.addEventListener('timeupdate', ()=>{
-    if(v.currentTime >= 2.5 && !closed){
+    if(v.currentTime >= 2.0 && !closed){
       v.pause();
       closeEnvelope();
     }
   });
   v.onended = ()=>{ closeEnvelope(); };
-  setTimeout(()=>{ closeEnvelope(); }, 3000);
+  setTimeout(()=>{ closeEnvelope(); }, 2500);
 }
 function closeEnvelope(){
   if(closed) return; closed = true;
