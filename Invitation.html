@@ -108,7 +108,7 @@ let v = document.getElementById('envVideo');
 
 // 1- L video byeballesh la wa7do bas la yousal la l zarf, ba3den byew2af
 v.addEventListener('timeupdate', function(){
-  if(!played && !pausedOnEnvelope && v.currentTime >= 0.5){
+  if(!played && !pausedOnEnvelope && v.currentTime >= 0.2){
     v.pause();
     pausedOnEnvelope = true;
   }
