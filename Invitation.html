@@ -1,5 +1,4 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,57 +8,22 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Montserrat',sans-serif;background:#E8D5B8;color:#3a2a2a;text-align:center;overflow-x:hidden}
+body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-align:center;overflow-x:hidden}
 .script{font-family:'Great Vibes',cursive}
 .phone{max-width:480px;margin:0 auto;background:#FDF6EC;overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,.2)}
 
-/* ============ ENVELOPE METEL L VIDEO - REAL ============ */
-#envelopeOverlay{position:fixed;inset:0;background:linear-gradient(180deg,#E9D5B8,#D9BFA0);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;transition:opacity .9s, visibility .9s}
+/* ============ ENVELOPE HA2I2E - SURA ============ */
+#envelopeOverlay{position:fixed;inset:0;background:#EAD9C2;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;transition:opacity .9s, visibility .9s}
 #envelopeOverlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.env-scene{perspective:1400px;width:340px;height:500px;position:relative;cursor:pointer}
-.env-3d{position:absolute;inset:0;transform-style:preserve-3d;transition:transform 1.2s ease}
-/* L Zarf - beige ornate metel l sura */
-.env-body{position:absolute;inset:0;background:#F7EEDD;border-radius:18px;box-shadow:0 35px 70px rgba(0,0,0,.35), inset 0 0 0 1px #D9C2A0;overflow:hidden}
-/* L itar l meza5raf - lace beige */
-.env-body::before{content:'';position:absolute;inset:0;border-radius:18px;background:
-  radial-gradient(circle at 15px 15px, #E8D5B8 6px, transparent 7px),
-  radial-gradient(circle at calc(100% - 15px) 15px, #E8D5B8 6px, transparent 7px),
-  radial-gradient(circle at 15px calc(100% - 15px), #E8D5B8 6px, transparent 7px),
-  radial-gradient(circle at calc(100% - 15px) calc(100% - 15px), #E8D5B8 6px, transparent 7px);
-  background-size:100% 100%;opacity:.8}
-.env-body::after{content:'';position:absolute;inset:12px;border:1.5px solid #C9A98A;border-radius:12px;box-shadow:inset 0 0 0 4px #F7EEDD, inset 0 0 0 5px #D8C2A0}
-/* L carta l juwwa */
-.env-card{position:absolute;inset:18px;background:linear-gradient(180deg,#FFFDF8,#FDF6EC);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;box-shadow:0 8px 25px rgba(0,0,0,.12);transition:transform 1.1s ease, opacity .8s}
-/* Floral corners - metel l video */
-.env-card::before{content:'❀ ✿ ❀';position:absolute;top:12px;left:0;right:0;font-size:14px;color:#C9A98A;letter-spacing:8px;opacity:.7}
-.env-card::after{content:'❀ ✿ ❀';position:absolute;bottom:12px;left:0;right:0;font-size:14px;color:#C9A98A;letter-spacing:8px;opacity:.7}
-.env-card h3{font-size:52px;line-height:.85;color:#3a2a2a}
-.env-card .amp{font-family:'Cormorant Garamond',serif;font-size:28px;margin:6px 0;color:#8A6D1B}
-.env-card .date{font-family:'Cormorant Garamond',serif;font-size:15px;margin-top:14px;color:#7a6a5a;letter-spacing:.5px}
-.env-card .sub{font-size:11px;letter-spacing:1px;margin-top:6px;color:#999;font-style:italic}
-.env-card .mono{width:48px;height:48px;border:1px solid #C9A98A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:14px;margin-bottom:14px;color:#8A6D1B;background:#FFFDF8;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-/* Shrit X SHEFFEF - metel l video bel zabt */
-.ribbon{position:absolute;inset:0;z-index:4;pointer-events:none;transition:opacity .6s, transform .8s}
-.ribbon::before{content:'';position:absolute;left:50%;top:-20px;bottom:-20px;width:52px;transform:translateX(-50%) rotate(28deg);background:linear-gradient(90deg, transparent 0%, rgba(255,255,255,.15) 10%, rgba(255,255,255,.75) 30%, rgba(250,245,235,.9) 50%, rgba(255,255,255,.75) 70%, rgba(255,255,255,.15) 90%, transparent 100%);box-shadow:0 0 20px rgba(0,0,0,.12), inset 0 0 15px rgba(255,255,255,.5);backdrop-filter:blur(1px);border-left:1px solid rgba(255,255,255,.6);border-right:1px solid rgba(255,255,255,.6)}
-.ribbon::after{content:'';position:absolute;left:50%;top:-20px;bottom:-20px;width:52px;transform:translateX(-50%) rotate(-28deg);background:linear-gradient(90deg, transparent 0%, rgba(255,255,255,.15) 10%, rgba(255,255,255,.75) 30%, rgba(250,245,235,.9) 50%, rgba(255,255,255,.75) 70%, rgba(255,255,255,.15) 90%, transparent 100%);box-shadow:0 0 20px rgba(0,0,0,.12), inset 0 0 15px rgba(255,255,255,.5);border-left:1px solid rgba(255,255,255,.6);border-right:1px solid rgba(255,255,255,.6)}
-/* Ghta l zarf */
-.env-flap{position:absolute;top:0;left:0;right:0;height:250px;background:linear-gradient(180deg,#F5EBDD,#EAD9C2);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transform:rotateX(0deg);transition:transform 1s ease;z-index:5;backface-visibility:hidden;border-bottom:1px solid #D8C2A0}
-/* Khetm Shama3 - beige dehabe metel l video */
-.wax{position:absolute;top:215px;left:50%;transform:translateX(-50%) rotate(-2deg);width:76px;height:76px;background:radial-gradient(circle at 35% 30%, #E8D5B8, #D9BFA0 45%, #B9A07A 75%, #8A6D1B);border-radius:50% 48% 52% 46% / 48% 52% 48% 52%;display:flex;align-items:center;justify-content:center;z-index:6;box-shadow:0 8px 22px rgba(0,0,0,.4), inset 0 2px 8px rgba(255,255,255,.5), inset 0 -3px 8px rgba(0,0,0,.2);transition:all .5s}
-.wax span{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#4A2A10;letter-spacing:1px;border:1px solid rgba(74,42,16,.45);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 40% 35%, rgba(255,255,255,.4), transparent)}
-.wax::after{content:'';position:absolute;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle, transparent 62%, rgba(185,160,122,.35) 63%, rgba(185,160,122,.15) 68%, transparent 72%)}
-/* Animation */
-.env-scene.open .env-flap{transform:rotateX(180deg)}
-.env-scene.open .ribbon{opacity:0;transform:scale(1.25) rotate(4deg)}
-.env-scene.open .wax{transform:translateX(-50%) scale(0) rotate(50deg);opacity:0}
-.env-scene.open .env-card{transform:translateY(-40px) scale(1.03);z-index:7}
-.env-scene.open .env-3d{transform:translateY(12px)}
-.open-btn{margin-top:28px;background:#4A0E1A;color:white;border:none;padding:16px 36px;border-radius:30px;font-size:14px;letter-spacing:2px;cursor:pointer;box-shadow:0 12px 28px rgba(74,14,26,.45);animation:pulse 1.6s infinite}
+.env-scene{width:340px;height:500px;max-width:88vw;max-height:62vh;position:relative;cursor:pointer;transition:transform 1.1s cubic-bezier(.2,.8,.2,1), opacity .8s}
+/* HAYDE L SURA L HA2I2IYE */
+.env-img{width:100%;height:100%;object-fit:cover;border-radius:8px;box-shadow:0 30px 60px rgba(0,0,0,.35);display:block}
+.env-scene.open{transform:scale(1.15) translateY(-20px) rotate(-1deg);opacity:0}
+.open-btn{margin-top:26px;background:#4A0E1A;color:white;border:none;padding:16px 36px;border-radius:30px;font-size:14px;letter-spacing:2px;cursor:pointer;box-shadow:0 12px 28px rgba(74,14,26,.45);animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 .tap-hint{margin-top:12px;font-size:12px;color:#7a6a5a}
 
-/* Transitions */
-.reveal{opacity:0;transform:translateY(35px);transition:opacity .9s, transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .9s, transform .9s}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-left{opacity:0;transform:translateX(-35px);transition:all .9s}
 .reveal-left.visible{opacity:1;transform:translateX(0)}
@@ -67,7 +31,6 @@ body{font-family:'Montserrat',sans-serif;background:#E8D5B8;color:#3a2a2a;text-a
 .reveal-right.visible{opacity:1;transform:translateX(0)}
 .reveal-zoom{opacity:0;transform:scale(.85);transition:all 1s}
 .reveal-zoom.visible{opacity:1;transform:scale(1)}
-
 .hero{background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.35)),url('https://images.unsplash.com/photo-1519741497674-611481863552?w=900');background-size:cover;background-position:center;color:white;padding:70px 20px 45px}
 .hero small{letter-spacing:4px;font-size:11px}
 .hero h1{font-size:62px;line-height:.9;margin:18px 0}
@@ -114,59 +77,31 @@ body{font-family:'Montserrat',sans-serif;background:#E8D5B8;color:#3a2a2a;text-a
 </head>
 <body>
 
-<!-- ENVELOPE METEL L VIDEO -->
+<!-- ENVELOPE HA2I2E -->
 <div id="envelopeOverlay">
   <div class="env-scene" id="envScene" onclick="openEnvelope()">
-    <div class="env-3d">
-      <div class="env-body"></div>
-      <div class="env-card">
-        <div class="mono">A & M</div>
-        <h3 class="script">Groom &<br>Bride</h3>
-        <div class="amp">&</div>
-        <div class="date">Sunday, June 15, 2027</div>
-        <div class="sub">The Next Chapter of Our Forever</div>
-      </div>
-      <div class="ribbon"></div>
-      <div class="env-flap"></div>
-      <div class="wax"><span>A & M</span></div>
-    </div>
+    <img class="env-img" src="envelope.jpg" alt="Wedding Envelope">
   </div>
   <button class="open-btn" onclick="openEnvelope()">✉️ OPEN INVITATION</button>
   <p class="tap-hint">Tap the envelope to open • اضغطي لفتح الدعوة</p>
 </div>
 
 <div class="phone">
-<div class="hero">
-  <small>✨ WE ARE GETTING MARRIED ✨</small>
-  <h1 class="script">Groom Name<br>& Bride Name</h1>
-  <div class="date">Sunday, June 15, 2027</div>
-  <div class="sub">The Next Chapter of Our Forever</div>
-  <div class="pill">DISCOVER OUR DAY ↓</div>
-</div>
+<div class="hero"><small>✨ WE ARE GETTING MARRIED ✨</small><h1 class="script">Groom Name<br>& Bride Name</h1><div class="date">Sunday, June 15, 2027</div><div class="sub">The Next Chapter of Our Forever</div><div class="pill">DISCOVER OUR DAY ↓</div></div>
 <div class="lace"></div>
-
 <div class="count-sec reveal"><h2>Countdown</h2><div class="count"><div><b id="d">00</b><span>DAYS</span></div><div><b id="h">00</b><span>HOURS</span></div><div><b id="m">00</b><span>MINUTES</span></div><div><b id="s">00</b><span>SECONDS</span></div></div></div>
 <div class="lace-b"></div>
-
 <div class="section reveal"><h1 class="script" style="font-size:48px">Groom & Bride</h1><div class="orn">❖ A ❖ M ❖</div><p><i>Therefore what God has joined together,<br>let no one separate</i></p><div class="parents"><div>Mr. & Mrs.<br><b>Jaber</b></div><div>Mr. & Mrs.<br><b>Oleik</b></div></div><p>Request the honor of your presence at<br>the wedding of their son and daughter</p><p><b style="color:#4A0E1A">Sunday, June 15, 2027</b></p></div>
-
 <div class="section reveal" style="padding-top:0"><div class="orn">— — —</div><h2>Meeting Point</h2>
 <div class="card reveal-left"><div style="font-size:32px">🏠</div><p>3:00 PM</p><h3>Groom House</h3><p>Miziria • Lebanon</p><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Miziria+Lebanon">VIEW ON MAP</a></div>
 <div class="card reveal-right"><div style="font-size:32px">🏠</div><p>3:00 PM</p><h3>Bride House</h3><p>Zgharta • Lebanon</p><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Zgharta+Lebanon">VIEW ON MAP</a></div></div>
-
 <div class="section reveal" style="padding-top:0"><div class="orn">— — —</div><h2>Wedding Day</h2><div class="timeline">
 <div class="t-item reveal-left"><div class="t-time">6:00 PM</div><div><b>⛪ Wedding Ceremony</b><p>Saydet El Najat Church - Zgharta</p><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Mar+Sarkis+Bekhos+Church+Zgharta">View on map</a></div></div>
 <div class="t-item reveal-right"><div class="t-time">8:00 PM</div><div><b>🥂 Welcome Drink</b><p>Octagon Venue</p><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Octagon+Venue+Lebanon">View on map</a></div></div>
 <div class="t-item reveal-left"><div class="t-time">9:00 PM</div><div><b>🎉 The Celebration</b><p>Octagon Venue - Dinner & Party</p><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Octagon+Venue+Lebanon">View on map</a></div></div></div></div>
-
-<!-- DRESS CODE REMOVED - SHELNEH NEHE2IYAN -->
-
 <div class="section reveal" style="padding-top:0"><h2>Our Story</h2><p>Every love story is beautiful, but ours is our favorite. What started as a simple hello turned into endless conversations, unforgettable memories, and a love that feels like home.</p><img class="story-img reveal" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800"><img class="story-img reveal" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800"></div>
-
 <div class="section reveal" style="padding-top:0"><h2>Gift List</h2><p>Your love, laughter and presence are all we could wish for on our special day. For those who wish, a wedding list is available</p><div class="gift-box" style="margin-top:16px"><p>Wish Money</p><div class="num">76 557 624</div><button onclick="copyWish()">COPY NUMBER 📋</button><p id="copyMsg" style="font-size:12px"></p></div></div>
-
 <div class="rsvp reveal"><h2>RSVP</h2><p>Will you join us?<br>Please reply before July 1, 2027</p><label>Your Name *</label><input id="name" placeholder="Enter your name"><div class="rsvp-row"><div><label>Phone *</label><input id="phone" placeholder="Phone number" type="tel"></div><div><label>Guests</label><select id="guests"><option>1 Person</option><option>2 Persons</option><option>3 Persons</option><option>4 Persons</option><option>5+ Persons</option></select></div></div><label>Are you attending?</label><div class="choice"><button id="btnYes" onclick="choose('YES - I WILL ATTEND',this)">Joyfully Accept</button><button id="btnNo" onclick="choose('NO - I CANNOT ATTEND',this)">Regretfully Decline</button></div><label>Any special requests or notes</label><textarea id="note" rows="2" placeholder="Message for the couple..."></textarea><button class="send" onclick="sendRSVP()">SEND RSVP</button><p id="rsvpMsg"></p></div>
-
 <div class="thank reveal"><h2>Thank You</h2><p>We are so grateful to celebrate<br>this special day surrounded<br>by the people we love most.</p><h1 class="script" style="font-size:42px;margin-top:14px">Groom & Bride</h1><p style="font-size:11px;letter-spacing:3px;margin-top:20px">WITH LOVE • SEE YOU THERE ❤️</p></div>
 </div>
 
@@ -178,7 +113,7 @@ let opened = false;
 function openEnvelope(){
   if(opened) return; opened = true;
   document.getElementById('envScene').classList.add('open');
-  setTimeout(()=>{ document.getElementById('envelopeOverlay').classList.add('hidden'); document.body.style.overflow='auto'; observeReveals(); }, 1500);
+  setTimeout(()=>{ document.getElementById('envelopeOverlay').classList.add('hidden'); document.body.style.overflow='auto'; observeReveals(); }, 1100);
 }
 document.body.style.overflow='hidden';
 function observeReveals(){
@@ -202,3 +137,4 @@ async function sendRSVP(){
 </script>
 </body>
 </html>
+ 
