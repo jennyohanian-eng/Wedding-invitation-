@@ -8,13 +8,13 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-align:center;overflow-x:hidden}
+body{font-family:'Montserrat',sans-serif;background:#000;color:#3a2a2a;text-align:center;overflow-x:hidden}
 .script{font-family:'Great Vibes',cursive}
 .phone{max-width:480px;margin:0 auto;background:#FDF6EC;overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,.2)}
 #envelopeOverlay{position:fixed;inset:0;background:#000;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;transition:opacity .6s, visibility .6s}
 #envelopeOverlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .env-video-wrap{width:100%;max-width:480px;aspect-ratio:9/15;position:relative;overflow:hidden;background:#000;cursor:pointer}
-#envVideo{width:100%;height:100%;object-fit:cover;display:block}
+#envVideo{width:100%;height:100%;object-fit:cover;display:block;background:#000}
 .open-btn{margin-top:18px;background:#4A0E1A;color:white;border:none;padding:16px 36px;border-radius:30px;font-size:14px;letter-spacing:2px;cursor:pointer;box-shadow:0 12px 28px rgba(74,14,26,.45);animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 .tap-hint{margin-top:10px;font-size:12px;color:#fff;opacity:.8}
@@ -69,7 +69,7 @@ body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-a
 <body>
 <div id="envelopeOverlay">
   <div class="env-video-wrap" onclick="playEnvelope()">
-    <video id="envVideo" playsinline preload="auto" muted poster="Envelope.jpg.jpg">
+    <video id="envVideo" playsinline preload="auto" muted>
       <source src="Envelope.mov" type="video/quicktime">
       <source src="Envelope.mov" type="video/mp4">
     </video>
@@ -103,13 +103,23 @@ const WISH = "76557624";
 let selected = "YES - I WILL ATTEND";
 let played = false;
 let closed = false;
+
+// *** VIDEO WE2EF 3A AWWAL FRAME - MA BYESHTGHEL LA WA7DO ***
+let v = document.getElementById('envVideo');
+v.addEventListener('loadedmetadata', ()=>{
+  v.currentTime = 0.01;
+  v.pause();
+});
+v.addEventListener('loadeddata', ()=>{
+  v.currentTime = 0.01;
+  v.pause();
+});
+
 function playEnvelope(){
   if(played) return; played = true;
-  let v = document.getElementById('envVideo');
   v.currentTime = 0;
   v.muted = true;
   v.play().catch(()=>{});
-  // *** BA3ED L DAKHNE DEGHRE - 2.0 SEC - YSakker 2ABEL SURA L COUPLE ***
   v.addEventListener('timeupdate', ()=>{
     if(v.currentTime >= 2.0 && !closed){
       v.pause();
@@ -132,7 +142,7 @@ function observeReveals(){
 }
 const weddingDate = new Date("2027-06-15T18:00:00").getTime();
 let last={};
-function setVal(id,val){ const el=document.getElementById(id); const v=String(val).padStart(2,'0'); if(last[id]!==v){ el.textContent=v; last[id]=v; } }
+function setVal(id,val){ const el=document.getElementById(id); const v2=String(val).padStart(2,'0'); if(last[id]!==v2){ el.textContent=v2; last[id]=v2; } }
 setInterval(()=>{ let diff=weddingDate-Date.now(); if(diff<0) diff=0; setVal('d',Math.floor(diff/86400000)); setVal('h',Math.floor(diff%86400000/3600000)); setVal('m',Math.floor(diff%3600000/60000)); setVal('s',Math.floor(diff%60000/1000)); },1000);
 function copyWish(){ navigator.clipboard.writeText(WISH); document.getElementById('copyMsg').textContent="Copied! Thank you ❤️"; }
 function choose(val,btn){ selected=val; document.querySelectorAll('.choice button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
