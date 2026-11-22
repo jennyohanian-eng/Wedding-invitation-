@@ -11,26 +11,20 @@ html{scroll-behavior:smooth}
 body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-align:center;overflow-x:hidden}
 .script{font-family:'Great Vibes',cursive}
 .phone{max-width:480px;margin:0 auto;background:#FDF6EC;overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,.2)}
-
-/* ============ ENVELOPE HA2I2E - SURA ============ */
 #envelopeOverlay{position:fixed;inset:0;background:#EAD9C2;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;transition:opacity .9s, visibility .9s}
 #envelopeOverlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .env-scene{width:340px;height:500px;max-width:88vw;max-height:62vh;position:relative;cursor:pointer;transition:transform 1.1s cubic-bezier(.2,.8,.2,1), opacity .8s}
-/* HAYDE L SURA L HA2I2IYE */
-.env-img{width:100%;height:100%;object-fit:cover;border-radius:8px;box-shadow:0 30px 60px rgba(0,0,0,.35);display:block}
+.env-img{width:100%;height:100%;object-fit:cover;border-radius:8px;box-shadow:0 30px 60px rgba(0,0,0,.35);display:block;background:#F7EEDD}
 .env-scene.open{transform:scale(1.15) translateY(-20px) rotate(-1deg);opacity:0}
 .open-btn{margin-top:26px;background:#4A0E1A;color:white;border:none;padding:16px 36px;border-radius:30px;font-size:14px;letter-spacing:2px;cursor:pointer;box-shadow:0 12px 28px rgba(74,14,26,.45);animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 .tap-hint{margin-top:12px;font-size:12px;color:#7a6a5a}
-
 .reveal{opacity:0;transform:translateY(35px);transition:opacity .9s, transform .9s}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-left{opacity:0;transform:translateX(-35px);transition:all .9s}
 .reveal-left.visible{opacity:1;transform:translateX(0)}
 .reveal-right{opacity:0;transform:translateX(35px);transition:all .9s}
 .reveal-right.visible{opacity:1;transform:translateX(0)}
-.reveal-zoom{opacity:0;transform:scale(.85);transition:all 1s}
-.reveal-zoom.visible{opacity:1;transform:scale(1)}
 .hero{background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.35)),url('https://images.unsplash.com/photo-1519741497674-611481863552?w=900');background-size:cover;background-position:center;color:white;padding:70px 20px 45px}
 .hero small{letter-spacing:4px;font-size:11px}
 .hero h1{font-size:62px;line-height:.9;margin:18px 0}
@@ -76,16 +70,13 @@ body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-a
 </style>
 </head>
 <body>
-
-<!-- ENVELOPE HA2I2E -->
 <div id="envelopeOverlay">
   <div class="env-scene" id="envScene" onclick="openEnvelope()">
-    <img class="env-img" src="envelope.jpg" alt="Wedding Envelope">
+    <img class="env-img" src="Envelope.jpg.jpg" alt="Wedding Envelope">
   </div>
   <button class="open-btn" onclick="openEnvelope()">✉️ OPEN INVITATION</button>
   <p class="tap-hint">Tap the envelope to open • اضغطي لفتح الدعوة</p>
 </div>
-
 <div class="phone">
 <div class="hero"><small>✨ WE ARE GETTING MARRIED ✨</small><h1 class="script">Groom Name<br>& Bride Name</h1><div class="date">Sunday, June 15, 2027</div><div class="sub">The Next Chapter of Our Forever</div><div class="pill">DISCOVER OUR DAY ↓</div></div>
 <div class="lace"></div>
@@ -104,7 +95,6 @@ body{font-family:'Montserrat',sans-serif;background:#EAD9C2;color:#3a2a2a;text-a
 <div class="rsvp reveal"><h2>RSVP</h2><p>Will you join us?<br>Please reply before July 1, 2027</p><label>Your Name *</label><input id="name" placeholder="Enter your name"><div class="rsvp-row"><div><label>Phone *</label><input id="phone" placeholder="Phone number" type="tel"></div><div><label>Guests</label><select id="guests"><option>1 Person</option><option>2 Persons</option><option>3 Persons</option><option>4 Persons</option><option>5+ Persons</option></select></div></div><label>Are you attending?</label><div class="choice"><button id="btnYes" onclick="choose('YES - I WILL ATTEND',this)">Joyfully Accept</button><button id="btnNo" onclick="choose('NO - I CANNOT ATTEND',this)">Regretfully Decline</button></div><label>Any special requests or notes</label><textarea id="note" rows="2" placeholder="Message for the couple..."></textarea><button class="send" onclick="sendRSVP()">SEND RSVP</button><p id="rsvpMsg"></p></div>
 <div class="thank reveal"><h2>Thank You</h2><p>We are so grateful to celebrate<br>this special day surrounded<br>by the people we love most.</p><h1 class="script" style="font-size:42px;margin-top:14px">Groom & Bride</h1><p style="font-size:11px;letter-spacing:3px;margin-top:20px">WITH LOVE • SEE YOU THERE ❤️</p></div>
 </div>
-
 <script>
 const FORM_ID = "e703be2ca592c720f6ea10de4db9096f";
 const WISH = "76557624";
@@ -137,4 +127,3 @@ async function sendRSVP(){
 </script>
 </body>
 </html>
- 
