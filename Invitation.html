@@ -70,8 +70,8 @@ body{font-family:'Montserrat',sans-serif;background:#000;color:#3a2a2a;text-alig
 <div id="envelopeOverlay">
   <div class="env-video-wrap" onclick="playEnvelope()">
     <video id="envVideo" playsinline preload="auto" muted>
+      <source src="Envelope.mp4" type="video/mp4">
       <source src="Envelope.mov" type="video/quicktime">
-      <source src="Envelope.mov" type="video/mp4">
     </video>
   </div>
   <button class="open-btn" onclick="playEnvelope()">✉️ OPEN INVITATION</button>
@@ -104,33 +104,19 @@ let selected = "YES - I WILL ATTEND";
 let played = false;
 let closed = false;
 
-// *** VIDEO WE2EF 3A AWWAL FRAME - MA BYESHTGHEL LA WA7DO ***
-let v = document.getElementById('envVideo');
-v.addEventListener('loadedmetadata', ()=>{
-  v.currentTime = 0.01;
-  v.pause();
-});
-v.addEventListener('loadeddata', ()=>{
-  v.currentTime = 0.01;
-  v.pause();
-});
-
 function playEnvelope(){
-  if(played) return; played = true;
+  if(played) return;
+  played = true;
+  let v = document.getElementById('envVideo');
   v.currentTime = 0;
-  v.muted = true;
-  v.play().catch(()=>{});
-  v.addEventListener('timeupdate', ()=>{
-    if(v.currentTime >= 2.0 && !closed){
-      v.pause();
-      closeEnvelope();
-    }
-  });
-  v.onended = ()=>{ closeEnvelope(); };
-  setTimeout(()=>{ closeEnvelope(); }, 2500);
+  v.play();
+  // Ba3ed 2 sec - ba3ed l dakhne - yeftah l invitation, 2abel sura l couple
+  setTimeout(function(){ closeEnvelope(); }, 2000);
 }
+
 function closeEnvelope(){
-  if(closed) return; closed = true;
+  if(closed) return;
+  closed = true;
   document.getElementById('envelopeOverlay').classList.add('hidden');
   document.body.style.overflow='auto';
   observeReveals();
