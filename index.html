@@ -67,16 +67,14 @@ body{font-family:'Montserrat',sans-serif;background:#000;color:#3a2a2a;text-alig
 </style>
 </head>
 <body>
-<!-- 🎶 MUSIC - ESEM L FILE L 7A2I2E -->
 <audio id="weddingMusic" loop preload="auto">
-  <source src="Every%20heartbeat%20(1).mp3" type="audio/mpeg">
+  <source src="Every%20heartbeat%20%281%29.mp3" type="audio/mpeg">
 </audio>
 
 <div id="envelopeOverlay">
   <div class="env-video-wrap" onclick="playEnvelope()">
     <video id="envVideo" playsinline preload="auto" muted autoplay>
       <source src="Envelope.mov" type="video/quicktime">
-      <source src="Envelope.jpg.jpg" type="image/jpeg">
     </video>
   </div>
   <button class="open-btn" onclick="playEnvelope()">✉️ OPEN INVITATION</button>
@@ -121,9 +119,8 @@ v.addEventListener('timeupdate', function(){
 function playEnvelope(){
   if(played) return; played = true;
   let m = document.getElementById('weddingMusic');
-  m.play().catch(()=>{});
-  document.getElementById('musicBtn').innerHTML = '🎶';
-  isPlaying = true;
+  m.volume = 1;
+  m.play().then(()=>{ document.getElementById('musicBtn').innerHTML='🎶'; isPlaying=true; }).catch(()=>{});
   v.currentTime = 0;
   v.play();
   setTimeout(function(){ closeEnvelope(); }, 2000);
@@ -157,7 +154,7 @@ let isPlaying = false;
 function toggleMusic(){
   let m = document.getElementById('weddingMusic');
   if(isPlaying){ m.pause(); document.getElementById('musicBtn').innerHTML='🔇'; isPlaying=false; }
-  else{ m.play(); document.getElementById('musicBtn').innerHTML='🎶'; isPlaying=true; }
+  else{ m.volume=1; m.play(); document.getElementById('musicBtn').innerHTML='🎶'; isPlaying=true; }
 }
 </script>
 </body>
