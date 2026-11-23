@@ -8,7 +8,6 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#FFF8F0;font-family:'Montserrat',sans-serif;color:#2D2D2D;overflow-x:hidden}
-/* ENVELOPE SCREEN */
 #envelopeScreen{position:fixed;inset:0;background:#FFF8F0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;transition:opacity .6s, visibility .6s;text-align:center;padding:20px}
 #envelopeScreen.hidden{opacity:0;visibility:hidden}
 #envelopeScreen img{width:260px;max-width:85vw;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.15);cursor:pointer;animation:float 2s ease-in-out infinite}
@@ -16,7 +15,6 @@ body{background:#FFF8F0;font-family:'Montserrat',sans-serif;color:#2D2D2D;overfl
 #envelopeScreen h2{font-family:'Great Vibes',cursive;font-size:42px;margin-top:20px;color:#8B6F47}
 #envelopeScreen p{color:#999;font-size:13px;margin-top:8px;letter-spacing:1px}
 .openBtn{margin-top:20px;background:#2D2D2D;color:white;border:none;padding:14px 30px;border-radius:30px;font-size:15px;font-weight:600;cursor:pointer}
-/* INVITATION */
 .container{max-width:520px;margin:0 auto;padding:20px 18px 100px;text-align:center}
 .top{font-size:11px;letter-spacing:3px;color:#B9A37E;margin:20px 0 10px}
 h1{font-family:'Playfair Display',serif;font-size:38px;line-height:1.1}
@@ -36,18 +34,15 @@ h1{font-family:'Playfair Display',serif;font-size:38px;line-height:1.1}
 .yes{background:#2D2D2D;color:white}
 .no{background:white;color:#2D2D2D;border:1px solid #DDD!important}
 .musicBtn{position:fixed;bottom:20px;right:20px;z-index:999;background:white;border:none;width:52px;height:52px;border-radius:50%;box-shadow:0 4px 15px rgba(0,0,0,.2);font-size:22px;cursor:pointer}
-.count{font-size:12px;color:#999;margin-top:12px}
 </style>
 </head>
 <body>
 
-<!-- MUSIC - YOUR SONG -->
 <audio id="weddingMusic" loop preload="auto">
-  <source src="Every%20heartbeat%20(1).mp3" type="audio/mpeg">
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 <button class="musicBtn" id="musicBtn" onclick="toggleMusic()">🔇</button>
 
-<!-- ENVELOPE -->
 <div id="envelopeScreen">
   <img src="Envelope.jpg.jpg" onclick="openInvitation()" alt="Envelope">
   <h2>You're Invited</h2>
@@ -55,7 +50,6 @@ h1{font-family:'Playfair Display',serif;font-size:38px;line-height:1.1}
   <button class="openBtn" onclick="openInvitation()">Open Invitation ✨</button>
 </div>
 
-<!-- INVITATION -->
 <div class="container">
   <div class="top">WITH LOVE • WE INVITE YOU TO CELEBRATE</div>
   <div class="script">The Wedding Of</div>
@@ -84,29 +78,18 @@ h1{font-family:'Playfair Display',serif;font-size:38px;line-height:1.1}
   <div class="info">
     <h3>💌 RSVP</h3>
     <p>Please let us know if you can make it by <b>1 June 2026</b>.</p>
-    <button class="rsvpBtn yes" onclick="rsvp('Yes, I will be there! 🥂')">✅ Yes, I'll Be There!</button>
-    <button class="rsvpBtn no" onclick="rsvp('Sorry, I can\'t make it ❤️')">❌ Sorry, Can't Make It</button>
-    <div class="count" id="countText"></div>
+    <button class="rsvpBtn yes" onclick="rsvp('Yes, I will be there!')">✅ Yes, I'll Be There!</button>
+    <button class="rsvpBtn no" onclick="rsvp('Sorry, I can\'t make it')">❌ Sorry, Can't Make It</button>
   </div>
 
   <p style="font-size:12px;color:#AAA;margin-top:20px">Made with love 🤍 • Jenny</p>
 </div>
 
 <script>
-// 1. GUEST NAME FROM LINK ?guest=Name
 let params = new URLSearchParams(location.search);
 let guest = params.get('guest');
-if(guest){
-  document.getElementById('guestName').innerText = guest;
-  // Save that this guest opened - for dashboard on same phone
-  try{
-    let all = JSON.parse(localStorage.getItem('jenny_guests')||'[]');
-    let found = all.find(x=>x.name.toLowerCase()===guest.toLowerCase());
-    if(found && found.status==='notopened'){ found.status='opened'; found.opened=true; localStorage.setItem('jenny_guests',JSON.stringify(all)); }
-  }catch(e){}
-}
+if(guest){ document.getElementById('guestName').innerText = guest; }
 
-// 2. COUNTDOWN - GHAYRE L DATE HON
 let weddingDate = new Date('2026-06-20T19:00:00').getTime();
 function updateCountdown(){
   let now = new Date().getTime();
@@ -119,7 +102,6 @@ function updateCountdown(){
 }
 setInterval(updateCountdown,1000); updateCountdown();
 
-// 3. MUSIC
 let music = document.getElementById('weddingMusic');
 let musicBtn = document.getElementById('musicBtn');
 let isPlaying = false;
@@ -129,16 +111,11 @@ function toggleMusic(){
 }
 function openInvitation(){
   document.getElementById('envelopeScreen').classList.add('hidden');
-  // Music starts when envelope opens
-  music.play().catch(()=>{});
-  musicBtn.innerHTML='🎶'; isPlaying=true;
+  music.play().then(()=>{ musicBtn.innerHTML='🎶'; isPlaying=true; }).catch(()=>{ musicBtn.innerHTML='🎶 - Tap to play'; });
 }
-
-// 4. RSVP - SEND VIA WHATSAPP TO YOU
 function rsvp(msg){
   let name = guest || 'Guest';
   let text = encodeURIComponent('Hi Jenny! This is ' + name + ' 💍 ' + msg);
-  // GHAYRE L RA2EM HON LA RA2MIK: 96170XXXXXX
   window.open('https://wa.me/96170123456?text=' + text, '_blank');
 }
 </script>
