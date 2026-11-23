@@ -67,23 +67,22 @@ body{font-family:'Montserrat',sans-serif;background:#000;color:#3a2a2a;text-alig
 </style>
 </head>
 <body>
-<!-- 🎶 MUSIC - ZEDNE BAS HAYDA -->
+<!-- 🎶 MUSIC - ESEM L FILE L 7A2I2E -->
 <audio id="weddingMusic" loop preload="auto">
-  <source src="music.mp3" type="audio/mpeg">
+  <source src="Every%20heartbeat%20(1).mp3" type="audio/mpeg">
 </audio>
 
 <div id="envelopeOverlay">
   <div class="env-video-wrap" onclick="playEnvelope()">
     <video id="envVideo" playsinline preload="auto" muted autoplay>
-      <source src="Envelope.mp4" type="video/mp4">
       <source src="Envelope.mov" type="video/quicktime">
+      <source src="Envelope.jpg.jpg" type="image/jpeg">
     </video>
   </div>
   <button class="open-btn" onclick="playEnvelope()">✉️ OPEN INVITATION</button>
   <p class="tap-hint">Tap to open • اضغطي لفتح الدعوة</p>
 </div>
 
-<!-- 🎶 MUSIC BUTTON - ZEDNE BAS HAYDA -->
 <button id="musicBtn" onclick="toggleMusic()" style="position:fixed;bottom:20px;right:20px;z-index:2000;background:white;border:none;width:52px;height:52px;border-radius:50%;box-shadow:0 4px 15px rgba(0,0,0,.3);font-size:22px;cursor:pointer">🔇</button>
 
 <div class="phone">
@@ -113,26 +112,20 @@ let played = false;
 let closed = false;
 let pausedOnEnvelope = false;
 let v = document.getElementById('envVideo');
-
-// 1- L video byeballesh la wa7do bas la yousal la l zarf, ba3den byew2af
 v.addEventListener('timeupdate', function(){
   if(!played && !pausedOnEnvelope && v.currentTime >= 0.2){
     v.pause();
     pausedOnEnvelope = true;
   }
 });
-
 function playEnvelope(){
   if(played) return; played = true;
-  // 🎶 SHAGGHEL L MUSIC MA3 L ENVELOPE - ZEDNE BAS HAYDA
   let m = document.getElementById('weddingMusic');
   m.play().catch(()=>{});
   document.getElementById('musicBtn').innerHTML = '🎶';
   isPlaying = true;
-
   v.currentTime = 0;
   v.play();
-  // Ba3ed l dakhne - 2 sec - yeftah l invitation, 2abel sura l couple
   setTimeout(function(){ closeEnvelope(); }, 2000);
 }
 function closeEnvelope(){
@@ -160,8 +153,6 @@ async function sendRSVP(){
   try{ await fetch(`https://formsubmit.co/ajax/${FORM_ID}`,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({_subject:`💍 NEW RSVP: ${selected} - ${name}`,_template:"table",_captcha:"false",Status:selected,Name:name,Phone:phone,Guests:guests,Message:note||"-",Date:new Date().toLocaleString()})});
   msg.innerHTML="Thank you ❤️ Your reply has been received!"; document.getElementById('name').value="";document.getElementById('phone').value="";document.getElementById('note').value=""; }catch(e){msg.textContent="Something went wrong, please try again.";}
 }
-
-// 🎶 MUSIC BUTTON - ZEDNE BAS HAYDA
 let isPlaying = false;
 function toggleMusic(){
   let m = document.getElementById('weddingMusic');
