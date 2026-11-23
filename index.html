@@ -3,148 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Groom & Bride - Wedding Invitation</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Jenny's Wedding Invitation 💍</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Montserrat',sans-serif;background:#000;color:#3a2a2a;text-align:center;overflow-x:hidden}
-.script{font-family:'Great Vibes',cursive}
-.phone{max-width:480px;margin:0 auto;background:#FDF6EC;overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,.2)}
-#envelopeOverlay{position:fixed;inset:0;background:#000;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;transition:opacity .6s, visibility .6s}
-#envelopeOverlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.env-video-wrap{width:100%;max-width:480px;aspect-ratio:9/15;position:relative;overflow:hidden;background:#000;cursor:pointer}
-#envVideo{width:100%;height:100%;object-fit:cover;display:block;background:#000}
-.open-btn{margin-top:18px;background:#4A0E1A;color:white;border:none;padding:16px 36px;border-radius:30px;font-size:14px;letter-spacing:2px;cursor:pointer;box-shadow:0 12px 28px rgba(74,14,26,.45);animation:pulse 1.6s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-.tap-hint{margin-top:10px;font-size:12px;color:#fff;opacity:.8}
-.reveal{opacity:0;transform:translateY(35px);transition:opacity .9s, transform .9s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-left{opacity:0;transform:translateX(-35px);transition:all .9s}
-.reveal-left.visible{opacity:1;transform:translateX(0)}
-.reveal-right{opacity:0;transform:translateX(35px);transition:all .9s}
-.reveal-right.visible{opacity:1;transform:translateX(0)}
-.hero{background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.35)),url('https://images.unsplash.com/photo-1519741497674-611481863552?w=900');background-size:cover;background-position:center;color:white;padding:70px 20px 45px}
-.hero small{letter-spacing:4px;font-size:11px}
-.hero h1{font-size:62px;line-height:.9;margin:18px 0}
-.hero .date{font-family:'Cormorant Garamond',serif;font-size:19px;margin-top:10px}
-.pill{display:inline-block;margin-top:18px;border:1px solid rgba(255,255,255,.7);padding:8px 18px;border-radius:20px;font-size:11px;letter-spacing:2px}
-.lace{height:42px;background-image:radial-gradient(circle at 10px 20px, #E8D5B8 8px, transparent 9px);background-size:22px 42px;background-repeat:repeat-x}
-.lace-b{height:42px;background:#4A0E1A;background-image:radial-gradient(circle at 10px 20px, #FDF6EC 8px, transparent 9px);background-size:22px 42px;background-repeat:repeat-x}
-.count-sec{background:#4A0E1A;color:white;padding:28px 15px 30px}
-.count-sec h2{font-family:'Cormorant Garamond',serif;font-size:36px}
-.count{display:flex;justify-content:center;gap:10px;margin-top:18px}
-.count div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:14px 0;width:74px}
-.count b{font-size:26px;display:block}
-.count span{font-size:10px;letter-spacing:1px;opacity:.8}
-.section{padding:35px 22px}
-.section h2{font-family:'Cormorant Garamond',serif;font-size:38px}
-.section p{font-size:13px;line-height:1.7;color:#7a6a5a;margin-top:12px}
-.orn{font-size:20px;letter-spacing:6px;color:#B9A07A;margin:10px 0}
-.parents{display:flex;justify-content:space-between;gap:10px;margin:18px 0;font-family:'Cormorant Garamond',serif;font-size:17px}
-.card{background:white;border:1px solid #EDE0C8;border-radius:16px;padding:22px;margin:14px 0}
-.card h3{font-family:'Cormorant Garamond',serif;font-size:26px;margin:8px 0 4px}
-.card p{margin:4px 0;color:#888}
-.btn{display:inline-block;margin-top:12px;border:1px solid #4A0E1A;color:#4A0E1A;text-decoration:none;padding:10px 20px;border-radius:25px;font-size:12px;font-weight:600}
-.timeline{text-align:left;margin-top:18px}
-.t-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid #EDE0C8}
-.t-item .t-time{font-family:'Cormorant Garamond',serif;font-size:18px;min-width:75px;font-weight:600}
-.story-img{width:100%;height:280px;object-fit:cover;border-radius:140px 140px 16px 16px;margin-top:16px}
-.gift-box{border:1px solid #D8C2A0;padding:22px;border-radius:16px;background:white}
-.gift-box .num{font-size:24px;letter-spacing:2px;font-weight:700;margin:12px 0}
-.gift-box button{background:#4A0E1A;color:white;border:none;padding:11px 22px;border-radius:25px;cursor:pointer;font-weight:600}
-.rsvp{background:#4A0E1A;color:white;padding:35px 22px}
-.rsvp h2{font-family:'Cormorant Garamond',serif;font-size:40px}
-.rsvp label{display:block;text-align:left;font-size:12px;margin:12px 0 6px;opacity:.9}
-.rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:14px;border-radius:12px;border:none;font-size:14px;background:#FFFDF8}
-.rsvp-row{display:flex;gap:10px}.rsvp-row>*{flex:1}
-.choice{display:flex;gap:10px}
-.choice button{flex:1;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,.4);background:transparent;color:white;cursor:pointer;font-size:13px;font-weight:600}
-.choice button.active{background:white;color:#4A0E1A}
-.send{width:100%;background:#E8D5B8;color:#4A0E1A;border:none;padding:16px;border-radius:30px;font-weight:800;font-size:15px;margin-top:18px;cursor:pointer}
-.thank{padding:35px 22px}
-.thank h2{font-family:'Cormorant Garamond',serif;font-size:34px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#FFF8F0;font-family:'Montserrat',sans-serif;color:#2D2D2D;overflow-x:hidden}
+/* ENVELOPE SCREEN */
+#envelopeScreen{position:fixed;inset:0;background:#FFF8F0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;transition:opacity .6s, visibility .6s;text-align:center;padding:20px}
+#envelopeScreen.hidden{opacity:0;visibility:hidden}
+#envelopeScreen img{width:260px;max-width:85vw;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.15);cursor:pointer;animation:float 2s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+#envelopeScreen h2{font-family:'Great Vibes',cursive;font-size:42px;margin-top:20px;color:#8B6F47}
+#envelopeScreen p{color:#999;font-size:13px;margin-top:8px;letter-spacing:1px}
+.openBtn{margin-top:20px;background:#2D2D2D;color:white;border:none;padding:14px 30px;border-radius:30px;font-size:15px;font-weight:600;cursor:pointer}
+/* INVITATION */
+.container{max-width:520px;margin:0 auto;padding:20px 18px 100px;text-align:center}
+.top{font-size:11px;letter-spacing:3px;color:#B9A37E;margin:20px 0 10px}
+h1{font-family:'Playfair Display',serif;font-size:38px;line-height:1.1}
+.script{font-family:'Great Vibes',cursive;font-size:48px;color:#C19A6B;margin:6px 0}
+.divider{width:60px;height:1px;background:#D9C9A8;margin:18px auto}
+.guestBox{background:white;border:1px solid #F0E6D2;border-radius:16px;padding:16px;margin:18px 0}
+.guestBox small{color:#999;letter-spacing:2px;font-size:10px}
+.guestBox b{font-family:'Playfair Display',serif;font-size:24px;display:block;margin-top:4px}
+.dateBox{display:flex;justify-content:center;gap:12px;margin:20px 0}
+.dateCard{background:white;border-radius:14px;padding:14px 10px;flex:1;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.dateCard b{font-size:24px;font-family:'Playfair Display',serif;display:block}
+.dateCard span{font-size:10px;letter-spacing:2px;color:#999}
+.info{background:white;border-radius:18px;padding:20px;margin:16px 0;text-align:left;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.info h3{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:8px}
+.info p{font-size:14px;line-height:1.6;color:#555}
+.rsvpBtn{display:block;width:100%;padding:16px;border:none;border-radius:30px;font-size:16px;font-weight:700;cursor:pointer;margin:10px 0}
+.yes{background:#2D2D2D;color:white}
+.no{background:white;color:#2D2D2D;border:1px solid #DDD!important}
+.musicBtn{position:fixed;bottom:20px;right:20px;z-index:999;background:white;border:none;width:52px;height:52px;border-radius:50%;box-shadow:0 4px 15px rgba(0,0,0,.2);font-size:22px;cursor:pointer}
+.count{font-size:12px;color:#999;margin-top:12px}
 </style>
 </head>
 <body>
-<div id="envelopeOverlay">
-  <div class="env-video-wrap" onclick="playEnvelope()">
-    <video id="envVideo" playsinline preload="auto" muted autoplay>
-      <source src="Envelope.mp4" type="video/mp4">
-      <source src="Envelope.mov" type="video/quicktime">
-    </video>
-  </div>
-  <button class="open-btn" onclick="playEnvelope()">✉️ OPEN INVITATION</button>
-  <p class="tap-hint">Tap to open • اضغطي لفتح الدعوة</p>
+
+<!-- MUSIC - YOUR SONG -->
+<audio id="weddingMusic" loop preload="auto">
+  <source src="Every%20heartbeat%20(1).mp3" type="audio/mpeg">
+</audio>
+<button class="musicBtn" id="musicBtn" onclick="toggleMusic()">🔇</button>
+
+<!-- ENVELOPE -->
+<div id="envelopeScreen">
+  <img src="Envelope.jpg.jpg" onclick="openInvitation()" alt="Envelope">
+  <h2>You're Invited</h2>
+  <p>TAP TO OPEN 💌</p>
+  <button class="openBtn" onclick="openInvitation()">Open Invitation ✨</button>
 </div>
 
-<div class="phone">
-<div class="hero"><small>✨ WE ARE GETTING MARRIED ✨</small><h1 class="script">Groom Name<br>& Bride Name</h1><div class="date">Sunday, June 15, 2027</div><div class="sub">The Next Chapter of Our Forever</div><div class="pill">DISCOVER OUR DAY ↓</div></div>
-<div class="lace"></div>
-<div class="count-sec reveal"><h2>Countdown</h2><div class="count"><div><b id="d">00</b><span>DAYS</span></div><div><b id="h">00</b><span>HOURS</span></div><div><b id="m">00</b><span>MINUTES</span></div><div><b id="s">00</b><span>SECONDS</span></div></div></div>
-<div class="lace-b"></div>
-<div class="section reveal"><h1 class="script" style="font-size:48px">Groom & Bride</h1><div class="orn">❖ A ❖ M ❖</div><p><i>Therefore what God has joined together,<br>let no one separate</i></p><div class="parents"><div>Mr. & Mrs.<br><b>Jaber</b></div><div>Mr. & Mrs.<br><b>Oleik</b></div></div><p>Request the honor of your presence at<br>the wedding of their son and daughter</p><p><b style="color:#4A0E1A">Sunday, June 15, 2027</b></p></div>
-<div class="section reveal" style="padding-top:0"><div class="orn">— — —</div><h2>Meeting Point</h2>
-<div class="card reveal-left"><div style="font-size:32px">🏠</div><p>3:00 PM</p><h3>Groom House</h3><p>Miziria • Lebanon</p><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Miziria+Lebanon">VIEW ON MAP</a></div>
-<div class="card reveal-right"><div style="font-size:32px">🏠</div><p>3:00 PM</p><h3>Bride House</h3><p>Zgharta • Lebanon</p><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Zgharta+Lebanon">VIEW ON MAP</a></div></div>
-<div class="section reveal" style="padding-top:0"><div class="orn">— — —</div><h2>Wedding Day</h2><div class="timeline">
-<div class="t-item reveal-left"><div class="t-time">6:00 PM</div><div><b>⛪ Wedding Ceremony</b><p>Saydet El Najat Church - Zgharta</p><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Mar+Sarkis+Bekhos+Church+Zgharta">View on map</a></div></div>
-<div class="t-item reveal-right"><div class="t-time">8:00 PM</div><div><b>🥂 Welcome Drink</b><p>Octagon Venue</p><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Octagon+Venue+Lebanon">View on map</a></div></div>
-<div class="t-item reveal-left"><div class="t-time">9:00 PM</div><div><b>🎉 The Celebration</b><p>Octagon Venue - Dinner & Party</p><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Octagon+Venue+Lebanon">View on map</a></div></div></div></div>
-<div class="section reveal" style="padding-top:0"><h2>Our Story</h2><p>Every love story is beautiful, but ours is our favorite. What started as a simple hello turned into endless conversations, unforgettable memories, and a love that feels like home.</p><img class="story-img reveal" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800"><img class="story-img reveal" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800"></div>
-<div class="section reveal" style="padding-top:0"><h2>Gift List</h2><p>Your love, laughter and presence are all we could wish for on our special day. For those who wish, a wedding list is available</p><div class="gift-box" style="margin-top:16px"><p>Wish Money</p><div class="num">76 557 624</div><button onclick="copyWish()">COPY NUMBER 📋</button><p id="copyMsg" style="font-size:12px"></p></div></div>
-<div class="rsvp reveal"><h2>RSVP</h2><p>Will you join us?<br>Please reply before July 1, 2027</p><label>Your Name *</label><input id="name" placeholder="Enter your name"><div class="rsvp-row"><div><label>Phone *</label><input id="phone" placeholder="Phone number" type="tel"></div><div><label>Guests</label><select id="guests"><option>1 Person</option><option>2 Persons</option><option>3 Persons</option><option>4 Persons</option><option>5+ Persons</option></select></div></div><label>Are you attending?</label><div class="choice"><button id="btnYes" onclick="choose('YES - I WILL ATTEND',this)">Joyfully Accept</button><button id="btnNo" onclick="choose('NO - I CANNOT ATTEND',this)">Regretfully Decline</button></div><label>Any special requests or notes</label><textarea id="note" rows="2" placeholder="Message for the couple..."></textarea><button class="send" onclick="sendRSVP()">SEND RSVP</button><p id="rsvpMsg"></p></div>
-<div class="thank reveal"><h2>Thank You</h2><p>We are so grateful to celebrate<br>this special day surrounded<br>by the people we love most.</p><h1 class="script" style="font-size:42px;margin-top:14px">Groom & Bride</h1><p style="font-size:11px;letter-spacing:3px;margin-top:20px">WITH LOVE • SEE YOU THERE ❤️</p></div>
+<!-- INVITATION -->
+<div class="container">
+  <div class="top">WITH LOVE • WE INVITE YOU TO CELEBRATE</div>
+  <div class="script">The Wedding Of</div>
+  <h1>Jenny &amp; [Partner Name]</h1>
+  <div class="divider"></div>
+  <p style="color:#888;font-size:13px">Saturday • 20 June 2026 • Beirut, Lebanon</p>
+
+  <div class="guestBox">
+    <small>DEAR GUEST</small>
+    <b id="guestName">Our Beloved Guest</b>
+    <div style="font-size:12px;color:#999;margin-top:6px">We can't celebrate without you 🤍</div>
+  </div>
+
+  <div class="dateBox">
+    <div class="dateCard"><b id="dDays">--</b><span>DAYS</span></div>
+    <div class="dateCard"><b id="dHours">--</b><span>HOURS</span></div>
+    <div class="dateCard"><b id="dMins">--</b><span>MINS</span></div>
+    <div class="dateCard"><b id="dSecs">--</b><span>SECS</span></div>
+  </div>
+
+  <div class="info">
+    <h3>📍 Ceremony & Party</h3>
+    <p><b>Date:</b> Saturday, 20 June 2026<br><b>Time:</b> 7:00 PM<br><b>Venue:</b> [Venue Name], Beirut<br><b>Dress Code:</b> Elegant</p>
+  </div>
+
+  <div class="info">
+    <h3>💌 RSVP</h3>
+    <p>Please let us know if you can make it by <b>1 June 2026</b>.</p>
+    <button class="rsvpBtn yes" onclick="rsvp('Yes, I will be there! 🥂')">✅ Yes, I'll Be There!</button>
+    <button class="rsvpBtn no" onclick="rsvp('Sorry, I can\'t make it ❤️')">❌ Sorry, Can't Make It</button>
+    <div class="count" id="countText"></div>
+  </div>
+
+  <p style="font-size:12px;color:#AAA;margin-top:20px">Made with love 🤍 • Jenny</p>
 </div>
 
 <script>
-const FORM_ID = "e703be2ca592c720f6ea10de4db9096f";
-const WISH = "76557624";
-let selected = "YES - I WILL ATTEND";
-let played = false;
-let closed = false;
-let pausedOnEnvelope = false;
-let v = document.getElementById('envVideo');
+// 1. GUEST NAME FROM LINK ?guest=Name
+let params = new URLSearchParams(location.search);
+let guest = params.get('guest');
+if(guest){
+  document.getElementById('guestName').innerText = guest;
+  // Save that this guest opened - for dashboard on same phone
+  try{
+    let all = JSON.parse(localStorage.getItem('jenny_guests')||'[]');
+    let found = all.find(x=>x.name.toLowerCase()===guest.toLowerCase());
+    if(found && found.status==='notopened'){ found.status='opened'; found.opened=true; localStorage.setItem('jenny_guests',JSON.stringify(all)); }
+  }catch(e){}
+}
 
-// 1- L video byeballesh la wa7do bas la yousal la l zarf, ba3den byew2af
-v.addEventListener('timeupdate', function(){
-  if(!played && !pausedOnEnvelope && v.currentTime >= 0.2){
-    v.pause();
-    pausedOnEnvelope = true;
-  }
-});
+// 2. COUNTDOWN - GHAYRE L DATE HON
+let weddingDate = new Date('2026-06-20T19:00:00').getTime();
+function updateCountdown(){
+  let now = new Date().getTime();
+  let diff = weddingDate - now;
+  if(diff<0) diff=0;
+  document.getElementById('dDays').innerText = Math.floor(diff/(1000*60*60*24));
+  document.getElementById('dHours').innerText = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  document.getElementById('dMins').innerText = Math.floor((diff%(1000*60*60))/(1000*60));
+  document.getElementById('dSecs').innerText = Math.floor((diff%(1000*60))/1000);
+}
+setInterval(updateCountdown,1000); updateCountdown();
 
-function playEnvelope(){
-  if(played) return; played = true;
-  v.currentTime = 0;
-  v.play();
-  // Ba3ed l dakhne - 2 sec - yeftah l invitation, 2abel sura l couple
-  setTimeout(function(){ closeEnvelope(); }, 2000);
+// 3. MUSIC
+let music = document.getElementById('weddingMusic');
+let musicBtn = document.getElementById('musicBtn');
+let isPlaying = false;
+function toggleMusic(){
+  if(isPlaying){ music.pause(); musicBtn.innerHTML='🔇'; isPlaying=false; }
+  else{ music.play().catch(()=>{}); musicBtn.innerHTML='🎶'; isPlaying=true; }
 }
-function closeEnvelope(){
-  if(closed) return; closed = true;
-  document.getElementById('envelopeOverlay').classList.add('hidden');
-  document.body.style.overflow='auto';
-  observeReveals();
+function openInvitation(){
+  document.getElementById('envelopeScreen').classList.add('hidden');
+  // Music starts when envelope opens
+  music.play().catch(()=>{});
+  musicBtn.innerHTML='🎶'; isPlaying=true;
 }
-document.body.style.overflow='hidden';
-function observeReveals(){
-  const o = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); }); }, {threshold:.12});
-  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>o.observe(el));
-}
-const weddingDate = new Date("2027-06-15T18:00:00").getTime();
-let last={};
-function setVal(id,val){ const el=document.getElementById(id); const v2=String(val).padStart(2,'0'); if(last[id]!==v2){ el.textContent=v2; last[id]=v2; } }
-setInterval(()=>{ let diff=weddingDate-Date.now(); if(diff<0) diff=0; setVal('d',Math.floor(diff/86400000)); setVal('h',Math.floor(diff%86400000/3600000)); setVal('m',Math.floor(diff%3600000/60000)); setVal('s',Math.floor(diff%60000/1000)); },1000);
-function copyWish(){ navigator.clipboard.writeText(WISH); document.getElementById('copyMsg').textContent="Copied! Thank you ❤️"; }
-function choose(val,btn){ selected=val; document.querySelectorAll('.choice button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
-document.getElementById('btnYes').classList.add('active');
-async function sendRSVP(){
-  let name=document.getElementById('name').value.trim(); let phone=document.getElementById('phone').value.trim(); let guests=document.getElementById('guests').value; let note=document.getElementById('note').value.trim(); let msg=document.getElementById('rsvpMsg');
-  if(!name||!phone){msg.textContent="⚠️ Please enter your Name & Phone first!";msg.style.color="#FFD700";return;}
-  msg.textContent="Sending... Please wait...";msg.style.color="white";
-  try{ await fetch(`https://formsubmit.co/ajax/${FORM_ID}`,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({_subject:`💍 NEW RSVP: ${selected} - ${name}`,_template:"table",_captcha:"false",Status:selected,Name:name,Phone:phone,Guests:guests,Message:note||"-",Date:new Date().toLocaleString()})});
-  msg.innerHTML="Thank you ❤️ Your reply has been received!"; document.getElementById('name').value="";document.getElementById('phone').value="";document.getElementById('note').value=""; }catch(e){msg.textContent="Something went wrong, please try again.";}
+
+// 4. RSVP - SEND VIA WHATSAPP TO YOU
+function rsvp(msg){
+  let name = guest || 'Guest';
+  let text = encodeURIComponent('Hi Jenny! This is ' + name + ' 💍 ' + msg);
+  // GHAYRE L RA2EM HON LA RA2MIK: 96170XXXXXX
+  window.open('https://wa.me/96170123456?text=' + text, '_blank');
 }
 </script>
 </body>
